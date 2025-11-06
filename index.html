@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Management Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">InternHub</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="switchRole('admin')">Employer</a></li>
+                <li><a href="#" onclick="switchRole('student')">Student</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Admin Section -->
+        <div id="admin-section" class="section hidden">
+            <h1>Employer Dashboard</h1>
+            <div class="form-section">
+                <h2>Post Internship Opportunity</h2>
+                <form id="internship-form">
+                    <input type="text" id="job-title" placeholder="Job Title" required>
+                    <textarea id="job-description" placeholder="Job Description" required></textarea>
+                    <input type="number" id="duration" placeholder="Duration (in months)" required>
+                    <input type="text" id="company-name" placeholder="Company Name" required>
+                    <button type="submit" class="btn-primary">Post Opportunity</button>
+                </form>
+            </div>
+            <div class="internships-section">
+                <h2>Posted Internships</h2>
+                <div id="admin-internships" class="internships-list"></div>
+            </div>
+            <div class="progress-section">
+                <h2>Intern Progress Tracking</h2>
+                <div id="progress-list" class="progress-list"></div>
+            </div>
+        </div>
+
+        <!-- Student Section -->
+        <div id="student-section" class="section">
+            <h1>Student Dashboard</h1>
+            <div class="applications-section">
+                <h2>Available Internships</h2>
+                <div id="student-internships" class="internships-list"></div>
+            </div>
+            <div class="tasks-section">
+                <h2>My Tasks</h2>
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Add a new task" required>
+                    <button type="submit" class="btn-primary">Add Task</button>
+                </form>
+                <div id="tasks-list" class="tasks-list"></div>
+            </div>
+            <div class="feedback-section">
+                <h2>Mentor Feedback</h2>
+                <div id="feedback-list" class="feedback-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
